@@ -26,27 +26,6 @@ networks.
 <img width="465" height="321" alt="image" src="https://github.com/user-attachments/assets/536ef31e-c980-44d1-a6ff-6ad678fba2d5" />
 
 
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
-
-```
-Поле для вставки кода...
-....
-....
-....
-....
-```
-
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота 2](ссылка на скриншот 2)`
-
-
----
-
 ### Задание 3
 
 Создайте конфигурацию docker-compose для Prometheus с именем контейнера <ваши фамилия и инициалы>-netology-prometheus.
@@ -75,23 +54,46 @@ scrape_configs:
 ```
 docker_compose.yml
 ```
+ervices:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: oreshkinem-netology-prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - web_data:/etc/prometheus
+    networks:
+      - oreshkinem-my-netology-hw
+    restart: unless-stopped
+
 
 ```
 
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
+Открытие Prometheus в браузере
+<img width="889" height="717" alt="image" src="https://github.com/user-attachments/assets/4cc0c4e2-4a72-4e58-991e-1e9e540b50a8" />
+
 
 ### Задание 4
 
 Создайте конфигурацию docker-compose для Pushgateway с именем контейнера <ваши фамилия и инициалы>-netology-pushgateway.
 Обеспечьте внешний доступ к порту 9091 c докер-сервера.
 
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
+Прописываю сервис pushgateway в docker-compose.yml
+
+```
+pushgateway:
+    image: prom/pushgateway:v1.6.2
+    container_name: oreshkinem-netology-pushgateway
+    ports:
+      - 9091:9091
+    networks:
+      - oreshkinem-my-netology-hw
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+```
 
 Добавляем scrape_configs, в prometheus.yml с указанием сервиса pushgateway
 ```
@@ -103,9 +105,8 @@ scrape_configs:
 
 ```
 
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
 
+Открытие pushgateway в браузере
 
 ### Задание 5
 
