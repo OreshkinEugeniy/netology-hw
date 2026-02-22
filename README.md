@@ -56,19 +56,26 @@ networks.
 <img width="510" height="487" alt="image" src="https://github.com/user-attachments/assets/5a6e91ac-7903-42bc-867d-72d802fd9901" />
 
 
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
+prometheus.yml:
+```
+lobal:
+  scrape_interval: 15s 
+  evaluation_interval: 15s 
+
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+rule_files:
+
+scrape_configs:
 
 ```
-Поле для вставки кода...
-....
-....
-....
-....
+docker_compose.yml
+```
+
 ```
 
 `При необходимости прикрепитe сюда скриншоты
@@ -86,12 +93,14 @@ networks.
 5. `Заполните здесь этапы выполнения, если требуется ....`
 6. 
 
+Добавляем scrape_configs, в prometheus.yml с указанием сервиса pushgateway
 ```
-Поле для вставки кода...
-....
-....
-....
-....
+scrape_configs:
+  - job_name: 'pushgateway'
+    honor_labels: true
+    static_configs:
+      - targets: ["pushgateway:9091"]
+
 ```
 
 `При необходимости прикрепитe сюда скриншоты
