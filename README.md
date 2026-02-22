@@ -116,23 +116,28 @@ scrape_configs:
 Обеспечьте внешний доступ к порту 3000 c порта 80 докер-сервера.
 
 
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
+Настройка Docker-compose сервиса grafana
 
 ```
-Поле для вставки кода...
-....
-....
-....
-....
+grafana:
+    image: grafana/grafana
+    container_name: oreshkinem-netology-grafana
+    environments:
+      GF_PATHS_CONFIG: /etc/grafana/custom.ini
+    ports:
+      - 80:3000
+    volumes:
+      - web_data:/var/lib/grafana
+      - ./grafana:/etc/grafana
+    networks:
+      - oreshkinem-my-netology-hw
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+
 ```
 
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
 
 
 ### Задание 6
