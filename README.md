@@ -237,23 +237,75 @@ docker-compose.yml целиком;
 скриншот команды docker ps после запуске docker-compose.yml;
 скриншот графика, постоенного на основе вашей метрики.
 
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
+
+docker-compose.yml
+```
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: oreshkinem-netology-prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/etc/prometheus
+    networks:
+      - oreshkinem-my-netology-hw
+    restart: unless-stopped
+
+
+  pushgateway:
+    image: prom/pushgateway:v1.6.2
+    container_name: oreshkinem-netology-pushgateway
+    ports:
+      - 9091:9091
+    networks:
+      - oreshkinem-my-netology-hw
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+
+  grafana:
+    image: grafana/grafana
+    container_name: oreshkinem-netology-grafana
+    environment:
+      GF_PATHS_CONFIG: /etc/grafana/custom.ini
+    ports:
+      - 80:3000
+    volumes:
+      - ./grafana:/etc/grafana
+      - grafana_data:/var/lib/grafana
+    networks:
+      - oreshkinem-my-netology-hw
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+
+
+
+volumes:
+  prometheus_data:
+  grafana_data:
+
+
+networks:
+  oreshkinem-my-netology-hw:
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+
+
 
 ```
-Поле для вставки кода...
-....
-....
-....
-....
-```
 
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
+
+<img width="803" height="441" alt="image" src="https://github.com/user-attachments/assets/f30fb49c-9cda-4c9b-b0ef-eab2615fdb67" />
+
+
+<img width="1916" height="1021" alt="image" src="https://github.com/user-attachments/assets/728d329f-44ee-4133-8dfc-2ee85b1093e1" />
+
 
 
 ### Задание 8
