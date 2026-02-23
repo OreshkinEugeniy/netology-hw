@@ -138,6 +138,15 @@ grafana:
 
 ```
 
+custom.ini
+
+```
+admin_user = netology
+admin_password = netology
+```
+
+
+<img width="786" height="821" alt="image" src="https://github.com/user-attachments/assets/8324240d-e5d0-4d31-80ea-d82de773651c" />
 
 
 ### Задание 6
@@ -147,23 +156,73 @@ grafana:
 Настройте использование контейнерами одной сети.
 Запустите сценарий в detached режиме.
 
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
+
 
 ```
-Поле для вставки кода...
-....
-....
-....
-....
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: oreshkinem-netology-prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/etc/prometheus
+    networks:
+      - oreshkinem-my-netology-hw
+    restart: unless-stopped
+
+
+  pushgateway:
+    image: prom/pushgateway:v1.6.2
+    container_name: oreshkinem-netology-pushgateway
+    ports:
+      - 9091:9091
+    networks:
+      - oreshkinem-my-netology-hw
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+
+  grafana:
+    image: grafana/grafana
+    container_name: oreshkinem-netology-grafana
+    environment:
+      GF_PATHS_CONFIG: /etc/grafana/custom.ini
+    ports:
+      - 80:3000
+    volumes:
+      - ./grafana:/etc/grafana
+      - grafana_data:/var/lib/grafana
+    networks:
+      - oreshkinem-my-netology-hw
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+
+
+
+volumes:
+  prometheus_data:
+  grafana_data:
+
+
+networks:
+  oreshkinem-my-netology-hw:
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+
+
+
+
 ```
 
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
+<img width="803" height="441" alt="image" src="https://github.com/user-attachments/assets/f30fb49c-9cda-4c9b-b0ef-eab2615fdb67" />
+
+
 
 
 ### Задание 7
