@@ -10,10 +10,10 @@ https://github.com/netology-code/sys-pattern-homework/commit/930e3426757ff464df6
 
 ### Задание 3
 
-
+https://github.com/OreshkinEugeniy/netology-hw/network
 ```
 
 
 ```
-
+### Задание 4*
 
