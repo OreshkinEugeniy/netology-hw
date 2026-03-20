@@ -6,4 +6,4 @@ $res = $USER + "getto"
 
 echo $res
 
-#line for 4 example
+#line for 4 2
