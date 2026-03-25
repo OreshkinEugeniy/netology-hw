@@ -95,9 +95,10 @@ pipeline {
 
 В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
 
-```
+<img width="3360" height="2100" alt="image" src="https://github.com/user-attachments/assets/bcfb9c9f-db60-424a-a274-3d9124740dd8" />
 
-```
+<img width="3360" height="2100" alt="image" src="https://github.com/user-attachments/assets/59ad1d26-61cf-4794-a03d-5e4ab37a7980" />
+
 
 
 
