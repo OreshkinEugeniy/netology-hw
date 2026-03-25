@@ -46,12 +46,46 @@
 Загрузите файл в репозиторий с помощью jenkins.
 В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
 
+<img width="3360" height="2100" alt="image" src="https://github.com/user-attachments/assets/f7deca9d-5c53-4430-80ff-bcf0c41e56bf" />
+<img width="3360" height="2100" alt="image" src="https://github.com/user-attachments/assets/413afad5-ff18-43cc-b7d5-8ffa14b28a33" />
+<img width="3360" height="2100" alt="image" src="https://github.com/user-attachments/assets/5386b8f9-304f-4beb-b019-50753d706323" />
 
-
+код ppeline:
 ```
+pipeline {
+    agent any
 
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/OreshkinEugeniy/cicd-netology-hw.git'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'go test .'
+            }
+        }
+
+        stage('Go build') {
+            steps {
+                sh 'go build -o go_app .'
+            }
+        }
+        stage('Uoload to Nexus'){
+            steps {    
+                sh '''
+                curl -v -u admin:18192275Aa! \
+                --upload-file go_app \
+                http://127.0.0.1:8081/repository/cicd-netology/go_app
+                ls -la
+                ''' 
+            }    
+        }
+    }
+}
 ```
-
 
 ### Задание 4
 
