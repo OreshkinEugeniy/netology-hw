@@ -11,6 +11,8 @@
 
 
 ### Задание 2
+<img width="3360" height="2100" alt="image" src="https://github.com/user-attachments/assets/9c063759-6f01-4d7c-83e2-b8c60b7e0cad" />
+<img width="3360" height="2100" alt="image" src="https://github.com/user-attachments/assets/13d2c9e1-325e-4992-b818-dccf8ac933e6" />
 
 
 
