@@ -30,7 +30,27 @@
 <img width="1594" height="823" alt="image" src="https://github.com/user-attachments/assets/e9997692-501b-4ddf-a5f3-0c90495eaff5" />
 В связи с этим не могу показать сборку пайплайна но в остальном - задание сделано
 https://gitlab.com/opexenterprise/netology-hw 
+<img width="1477" height="876" alt="image" src="https://github.com/user-attachments/assets/e97a6977-aa33-40ce-9404-9ab2eb89a5e4" />
 
+```
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  image: golang:1.17
+  script:
+   - go test .
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker build -t myapp .
+```
 
 
 
