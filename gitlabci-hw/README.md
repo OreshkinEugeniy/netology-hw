@@ -63,7 +63,26 @@ build:
 В качестве ответа добавьте в шаблон с решением файл gitlab-ci.yml своего проекта или вставьте код в соответсвующее поле в шаблоне.
 
 ```
+stages:
+  - test
+  - build
 
+test:
+  stage: test
+  image: golang:1.17
+  script:
+   - go test .
+  rules:
+    - changes:
+      - **/*.go
 
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker build -t myapp .
+  needs: []
 ```
 
