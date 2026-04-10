@@ -62,11 +62,5 @@ sudo apt install zabbix-agent -y
 sudo systemctl restart zabbix-agent 
 sudo systemctl enable zabbix-agent
 
-### Задание 3
 
-```
-
-
-```
-### Задание 4*
 
