@@ -39,12 +39,28 @@ sudo systemctl enable zabbix-server apache2 # zabbix-agent
 Добавьте Zabbix Server в список разрешенных серверов ваших Zabbix Agentов.
 Добавьте Zabbix Agentов в раздел Configuration > Hosts вашего Zabbix Servera.
 Проверьте, что в разделе Latest Data начали появляться данные с добавленных агентов.
+
 Требования к результатам
 Приложите в файл README.md скриншот раздела Configuration > Hosts, где видно, что агенты подключены к серверу
 Приложите в файл README.md скриншот лога zabbix agent, где видно, что он работает с сервером
 Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
 Приложите в файл README.md текст использованных команд в GitHub
 
+
+<img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/45abe018-4581-45da-8d69-589ce58484af" />
+<img width="830" height="633" alt="image" src="https://github.com/user-attachments/assets/a5658257-5755-4d8a-940f-f96cf65898e5" />
+<img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/5849920e-dee6-4e56-bf27-6f89bae52ff6" />
+<img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/16ee4d8f-c8e9-4c4b-8737-538c4f841e2e" />
+<img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/5bc8fa1a-ea07-47dc-8978-9c7a575f4ea1" />
+<img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/2fb39aeb-ed65-4937-a800-299285ffabbe" />
+
+wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/
+zabbix-release_6.0-4%2Bdebian11_all.deb 
+dpkg -i zabbix-release_6.0-4+debian11_all.deb 
+apt update
+sudo apt install zabbix-agent -y
+sudo systemctl restart zabbix-agent 
+sudo systemctl enable zabbix-agent
 
 ### Задание 3
 
