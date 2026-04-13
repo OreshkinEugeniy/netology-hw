@@ -70,6 +70,11 @@
 Прикрепите в файл README.md скриншот карты, где видно, что триггер сработал, с названием «Задание 5»
 
 
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/53c5958a-437a-43f3-8956-c9d4fa877b26" />
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/95b2639f-7786-435a-8bdf-982973268e09" />
+
 ### Задание 6*
 Создайте UserParameter на bash и прикрепите его к созданному вами ранее шаблону. Он должен вызывать скрипт, который:
 
