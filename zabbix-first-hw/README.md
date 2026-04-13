@@ -1,4 +1,4 @@
-# Домашнее задание к занятию "`Git`" - `Орешкин Евгений`
+# Домашнее задание к занятию "`Система мониторинга Zabbix`" - `Орешкин Евгений`
 
 
 ### Задание 1
@@ -15,8 +15,8 @@
 
 <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/755e4d20-d689-4f07-80e6-961081b7af02" />
 
+```
 sudo apt install postgresql
-
 wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-
 release_6.0-4%2Bdebian11_all.deb 
 dpkg -i zabbix-release_6.0-4+debian11_all.deb 
@@ -29,6 +29,7 @@ zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psq
 sudo nano /etc/zabbix/zabbix_server.conf
 sudo systemctl restart zabbix-server apache2 # zabbix-agent 
 sudo systemctl enable zabbix-server apache2 # zabbix-agent
+```
 ### Задание 2
 
 Установите Zabbix Agent на два хоста.
@@ -54,6 +55,7 @@ sudo systemctl enable zabbix-server apache2 # zabbix-agent
 <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/5bc8fa1a-ea07-47dc-8978-9c7a575f4ea1" />
 <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/2fb39aeb-ed65-4937-a800-299285ffabbe" />
 
+```
 wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/
 zabbix-release_6.0-4%2Bdebian11_all.deb 
 dpkg -i zabbix-release_6.0-4+debian11_all.deb 
@@ -61,6 +63,6 @@ apt update
 sudo apt install zabbix-agent -y
 sudo systemctl restart zabbix-agent 
 sudo systemctl enable zabbix-agent
-
+```
 
 
