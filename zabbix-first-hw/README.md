@@ -15,6 +15,8 @@
 
 <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/755e4d20-d689-4f07-80e6-961081b7af02" />
 
+Список использованных команд:
+
 ```
 sudo apt install postgresql
 wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-
@@ -54,6 +56,8 @@ sudo systemctl enable zabbix-server apache2 # zabbix-agent
 <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/16ee4d8f-c8e9-4c4b-8737-538c4f841e2e" />
 <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/5bc8fa1a-ea07-47dc-8978-9c7a575f4ea1" />
 <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/2fb39aeb-ed65-4937-a800-299285ffabbe" />
+
+Список использованных команд:
 
 ```
 wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/
