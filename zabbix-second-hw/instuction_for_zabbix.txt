@@ -1,0 +1,2 @@
+Zabbix url: http://localhost/zabbix
+It use apache2. Nginx must be turned off. Apache use 8080 port
