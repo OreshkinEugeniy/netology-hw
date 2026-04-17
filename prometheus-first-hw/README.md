@@ -27,6 +27,8 @@
 #### Требования к результату
  Прикрепите к файлу README.md скриншот systemctl status node-exporter, где будет написано: node-exporter.service — Node Exporter Netology Lesson 9.4 — [Ваши ФИО]
 
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/e730b1f5-7bc5-457b-8ac2-7f175554d43a" />
+
 
 ### Задание 3
 
