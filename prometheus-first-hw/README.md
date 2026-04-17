@@ -43,6 +43,11 @@
  Прикрепите к файлу README.md скриншот конфигурации из интерфейса Prometheus вкладки Status > Configuration
  Прикрепите к файлу README.md скриншот из интерфейса Prometheus вкладки Status > Targets, чтобы было видно минимум два эндпоинта
 
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/f0b2eea4-2b36-4be2-8967-ef7f36744a01" />
+
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/53ca0094-9c77-469e-ab72-743bc83f288f" />
+
  ### Задание 4
  Установите Grafana.
 
