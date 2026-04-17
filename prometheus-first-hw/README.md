@@ -60,3 +60,6 @@
 ### Задание 5
 
 Интегрируйте Grafana и Prometheus.
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/13796891-e9f7-4be6-9ffe-4535603b1e10" />
+
