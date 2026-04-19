@@ -8,6 +8,10 @@
 #### Требования к результату
  Погасите node exporter, стоящий на мониторинге, и прикрепите скриншот раздела оповещений Prometheus, где оповещение будет в статусе Pending
 
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/a457102a-2b22-43bb-9c0d-46cd61e9e0e1" />
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/afd6d025-ca19-4166-9f10-4561afa40191" />
+
 ### Задание 2
 
 Установите Alertmanager и интегрируйте его с Prometheus.
