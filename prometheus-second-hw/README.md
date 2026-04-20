@@ -37,3 +37,6 @@
 ### Задание 4
 
 Создайте свой дашборд Grafana с различными метриками Docker и сервера, на котором он стоит.
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/83edfae1-b82c-4b2b-a96a-3b6f08217ecf" />
+
