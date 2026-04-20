@@ -30,6 +30,9 @@
 #### Требования к результату
  приложите скриншот браузера с открытым эндпоинтом, а также скриншот списка таргетов из интерфейса Prometheus.*
 
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/68fb0909-3a13-4042-a6b6-9abe3ed47cb9" />
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/2197af34-8be6-45d5-93a9-7ad3ca394e40" />
 
 ### Задание 4
 
