@@ -1,0 +1,65 @@
+# Домашнее задание к занятию "`Система мониторинга Prometheus`" - `Орешкин Евгений`
+
+
+### Задание 1
+
+Установите Prometheus.
+
+Процесс выполнения
+Выполняя задание, сверяйтесь с процессом, отражённым в записи лекции
+Создайте пользователя prometheus
+Скачайте prometheus и в соответствии с лекцией разместите файлы в целевые директории
+Создайте сервис как показано на уроке
+Проверьте что prometheus запускается, останавливается, перезапускается и отображает статус с помощью systemctl
+#### Требования к результату
+ Прикрепите к файлу README.md скриншот systemctl status prometheus, где будет написано: prometheus.service — Prometheus Service Netology Lesson 9.4 — [Ваши ФИО]
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/feac04fc-6771-42e5-bfb6-aed9509a55ed" />
+
+### Задание 2
+Установите Node Exporter.
+
+Процесс выполнения
+Выполняя ДЗ сверяйтесь с процессом отражённым в записи лекции.
+Скачайте node exporter приведённый в презентации и в соответствии с лекцией разместите файлы в целевые директории
+Создайте сервис для как показано на уроке
+Проверьте что node exporter запускается, останавливается, перезапускается и отображает статус с помощью systemctl
+#### Требования к результату
+ Прикрепите к файлу README.md скриншот systemctl status node-exporter, где будет написано: node-exporter.service — Node Exporter Netology Lesson 9.4 — [Ваши ФИО]
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/e730b1f5-7bc5-457b-8ac2-7f175554d43a" />
+
+
+### Задание 3
+
+Подключите Node Exporter к серверу Prometheus.
+
+Процесс выполнения
+Выполняя ДЗ сверяйтесь с процессом отражённым в записи лекции.
+Отредактируйте prometheus.yaml, добавив в массив таргетов установленный в задании 2 node exporter
+Перезапустите prometheus
+Проверьте что он запустился
+#### Требования к результату
+ Прикрепите к файлу README.md скриншот конфигурации из интерфейса Prometheus вкладки Status > Configuration
+ Прикрепите к файлу README.md скриншот из интерфейса Prometheus вкладки Status > Targets, чтобы было видно минимум два эндпоинта
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/f0b2eea4-2b36-4be2-8967-ef7f36744a01" />
+
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/53ca0094-9c77-469e-ab72-743bc83f288f" />
+
+ ### Задание 4
+ Установите Grafana.
+
+#### Требования к результату
+ Прикрепите к файлу README.md скриншот левого нижнего угла интерфейса, чтобы при наведении на иконку пользователя были видны ваши ФИО
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/67c9eeea-3fe9-4500-92c4-f0653b10f4bd" />
+
+
+### Задание 5
+
+Интегрируйте Grafana и Prometheus.
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/13796891-e9f7-4be6-9ffe-4535603b1e10" />
+
