@@ -20,3 +20,6 @@
 На проверку направить файл crontab и скриншот с результатом работы утилиты.
 
 <img width="905" height="271" alt="image" src="https://github.com/user-attachments/assets/4c258eee-07ca-40e9-a931-63019358313e" />
+
+<img width="911" height="262" alt="image" src="https://github.com/user-attachments/assets/1dd23660-c013-4fc0-9912-0b012c8df33a" />
+
