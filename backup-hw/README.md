@@ -1,25 +1,7 @@
-# Домашнее задание к занятию "`Кластеризация и балансировка нагрузки`" - `Орешкин Евгений`
+# Домашнее задание к занятию "`Резервное копирование`" - `Орешкин Евгений`
 
 
 ### Задание 1
 
-Запустите два simple python сервера на своей виртуальной машине на разных портах
-Установите и настройте HAProxy, воспользуйтесь материалами к лекции по ссылке
-Настройте балансировку Round-robin на 4 уровне.
-На проверку направьте конфигурационный файл haproxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy.
-
-
-<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/00fe1e0a-00b0-406a-bc56-f548df9d9bc1" />
-
-Файл haproxy - https://github.com/OreshkinEugeniy/netology-hw/blob/main/balance-hw/haproxy1.cfg
 ### Задание 2
 
-Запустите три simple python сервера на своей виртуальной машине на разных портах
-Настройте балансировку Weighted Round Robin на 7 уровне, чтобы первый сервер имел вес 2, второй - 3, а третий - 4
-HAproxy должен балансировать только тот http-трафик, который адресован домену example.local
-На проверку направьте конфигурационный файл haproxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy c использованием домена example.local и без него.
-
-
-<img width="818" height="463" alt="image" src="https://github.com/user-attachments/assets/ad9c0257-860b-45e1-a969-88fefbd3486d" />
-
-Файл haproxy - https://github.com/OreshkinEugeniy/netology-hw/blob/main/balance-hw/haproxy2.cfg
