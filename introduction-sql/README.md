@@ -3,105 +3,38 @@
 
 ### Задание 1
 
+1.1. Поднимите чистый инстанс MySQL версии 8.0+. Можно использовать локальный сервер или контейнер Docker.
+1.2. Создайте учётную запись sys_temp.
+1.3. Выполните запрос на получение списка пользователей в базе данных. (скриншот)
+1.4. Дайте все права для пользователя sys_temp.
+1.5. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
+1.6. Переподключитесь к базе данных от имени sys_temp.
 
-Опишите не менее семи таблиц, из которых состоит база данных. Определите:
+Для смены типа аутентификации с sha2 используйте запрос:
 
-какие данные хранятся в этих таблицах,
-какой тип данных у столбцов в этих таблицах, если данные хранятся в PostgreSQL.
-Начертите схему полученной модели данных. Можете использовать онлайн-редактор: https://app.diagrams.net/
+ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 
-Этапы реализации:
+1.6. По ссылке скачайте дамп базы данных.
+1.7. Восстановите дамп в базу данных.
+1.8. При работе в IDE сформируйте ER-диаграмму получившейся базы данных. При работе в командной строке используйте команду для получения всех таблиц базы данных. (скриншот)
 
-Внимательно изучите предоставленный вам файл с данными и подумайте, как можно сгруппировать данные по смыслу.
-Разбейте исходный файл на несколько таблиц и определите список столбцов в каждой из них.
-Для каждого столбца подберите подходящий тип данных из PostgreSQL.
-Для каждой таблицы определите первичный ключ (PRIMARY KEY).
-Определите типы связей между таблицами.
-Начертите схему модели данных. На схеме должны быть чётко отображены:
-все таблицы с их названиями,
-все столбцы с указанием типов данных,
-первичные ключи (они должны быть явно выделены),
-линии, показывающие связи между таблицами.
-Результатом выполнения задания должен стать скриншот получившейся схемы базы данных.
-<img width="1177" height="530" alt="image" src="https://github.com/user-attachments/assets/6aeccef0-cc1d-49f5-94e7-f34bc430d52d" />
+<img width="703" height="597" alt="image" src="https://github.com/user-attachments/assets/3865b048-0783-458d-91e5-385b0e9d5df7" />
+
+<img width="518" height="547" alt="image" src="https://github.com/user-attachments/assets/237cf4a8-9f0f-43b5-940c-55c105ac5fbc" />
+
+<img width="581" height="674" alt="image" src="https://github.com/user-attachments/assets/9c4e33b1-e816-4a18-9a22-f7233a8f054d" />
+
+
 
 ### Задание 2
-Разверните СУБД Postgres на своей хостовой машине, на виртуальной машине или в контейнере docker.
-Опишите схему, полученную в предыдущем задании, с помощью скрипта SQL.
-Создайте в вашей полученной СУБД новую базу данных и выполните полученный ранее скрипт для создания вашей модели данных.
-В качестве решения приложите SQL скрипт и скриншот диаграммы.
+Составьте таблицу, используя любой текстовый редактор или Excel, в которой должно быть два столбца: в первом должны быть названия таблиц восстановленной базы, во втором названия первичных ключей этих таблиц. Пример: (скриншот/текст)
 
-Для написания и редактирования sql удобно использовать специальный инструмент dbeaver.
-
-CREATE TABLE project (
-    project_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE department_type (
-    department_type_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE department (
-    department_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    department VARCHAR(255) NOT NULL,
-    department_type_id INTEGER NOT NULL,
-
-    CONSTRAINT fk_department_type_id
-        FOREIGN KEY (department_type_id)
-        REFERENCES department_type(department_type_id)
-);
-
-CREATE TABLE filial_address (
-    filial_address_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    filial_address VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE job_title (
-    job_title_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    job_title VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE employee (
-    employee_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255) NOT NULL,
-    surname VARCHAR(255) NOT NULL,
-    salary NUMERIC(12, 2) NOT NULL,
-    job_title_id INTEGER NOT NULL,
-    department_id INTEGER NOT NULL,
-    hire_date DATE NOT NULL,
-    filial_address_id INTEGER NOT NULL,
-
-    CONSTRAINT fk_job_title_id
-        FOREIGN KEY (job_title_id)
-        REFERENCES job_title(job_title_id),
-
-    CONSTRAINT fk_department_id
-        FOREIGN KEY (department_id)
-        REFERENCES department(department_id),
-
-    CONSTRAINT fk_filial_address_id
-        FOREIGN KEY (filial_address_id)
-        REFERENCES filial_address(filial_address_id)
-);
-
-CREATE TABLE employee_project (
-    employee_id INTEGER NOT NULL,
-    project_id INTEGER NOT NULL,
-
-    PRIMARY KEY (employee_id, project_id),
-
-    CONSTRAINT fk_employee_id
-        FOREIGN KEY (employee_id)
-        REFERENCES employee(employee_id),
-
-    CONSTRAINT fk_project_id
-        FOREIGN KEY (project_id)
-        REFERENCES project(project_id)
-);
+<img width="469" height="71" alt="image" src="https://github.com/user-attachments/assets/6a0842d7-9c7e-4350-8a0e-5d8aff0b421c" />
 
 
 
-<img width="515" height="289" alt="image" src="https://github.com/user-attachments/assets/59d75fe0-8038-4f73-b9b2-ea51c1a55fa2" />
+### Задание 3
+
+3.1. Уберите у пользователя sys_temp права на внесение, изменение и удаление данных из базы sakila.
+3.2. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
+
