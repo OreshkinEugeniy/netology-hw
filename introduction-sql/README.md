@@ -31,6 +31,8 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 
 <img width="469" height="71" alt="image" src="https://github.com/user-attachments/assets/6a0842d7-9c7e-4350-8a0e-5d8aff0b421c" />
 
+<img width="321" height="474" alt="image" src="https://github.com/user-attachments/assets/4846184a-d38e-4e4c-adcb-6494d5dbfacb" />
+
 
 
 ### Задание 3
