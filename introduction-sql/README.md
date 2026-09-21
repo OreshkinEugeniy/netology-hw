@@ -40,3 +40,5 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 3.1. Уберите у пользователя sys_temp права на внесение, изменение и удаление данных из базы sakila.
 3.2. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
 
+<img width="481" height="277" alt="image" src="https://github.com/user-attachments/assets/e5a6c4d3-597d-43ce-b6de-b0b9544077f2" />
+
