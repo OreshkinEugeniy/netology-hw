@@ -18,6 +18,10 @@
 Зашифруйте созданный раздел с помощью LUKS.
 В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.
 
+<img width="1167" height="113" alt="image" src="https://github.com/user-attachments/assets/d3af1ff1-ae57-45ae-a0bd-d1512af9adee" />
+<img width="1106" height="112" alt="image" src="https://github.com/user-attachments/assets/698594dc-9e5b-4c98-958b-645446b230db" />
+
+
 ### Задание 3
 Установите apparmor.
 Повторите эксперимент, указанный в лекции.
